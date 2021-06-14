@@ -55,10 +55,14 @@ class RecipeUITests: XCTestCase {
 
         XCTAssert(app.staticTexts["Avocado Tomato Pizza"].exists)
         XCTAssert(app.staticTexts["Cappuccino"].exists)
+        XCTAssert(app.staticTexts["Cupcakes"].exists)
+        XCTAssert(app.staticTexts["Seafood Paella"].exists)
+        XCTAssert(app.staticTexts["Zucchini Chips"].exists)
 
         app.staticTexts["Cappuccino"].tap()
         app.staticTexts["Uncompleted: A shot of espresso"].tap()
-        
+        //add assertion for strikethrough and/or checkmark in box
+
 
 
 
