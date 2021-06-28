@@ -18,10 +18,12 @@ class RecipeUITests: XCTestCase {
     }
 
 
-    func testExample() throws {
+    func HomeScreen() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+
+        //These are static and could be abstracted out into a screen object class
 
         XCTAssert(app.staticTexts["Avocado Tomato Pizza"].exists)
         XCTAssert(app.staticTexts["Cappuccino"].exists)
@@ -29,22 +31,20 @@ class RecipeUITests: XCTestCase {
         XCTAssert(app.staticTexts["Seafood Paella"].exists)
         XCTAssert(app.staticTexts["Zucchini Chips"].exists)
 
+
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    func Cappuccino() throws {
+
+        let app = XCUIApplication()
+        app.launch()
+
         app.staticTexts["Cappuccino"].tap()
         app.staticTexts["Uncompleted: A shot of espresso"].tap()
         //add assertion for strikethrough and/or checkmark in box
 
-
-
-
-
-        
-
-
-
-
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testLaunchPerformance() throws {
