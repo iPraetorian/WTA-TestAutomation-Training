@@ -32,6 +32,9 @@
 
 import XCTest
 
+
+
+
 class RecipeUITests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -52,11 +55,38 @@ class RecipeUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        //TO-DO: Utility class for common UI elements of back arrow, emoji, ingredients toggle
+        //List of requirements
+        let mainTitle: String = "Recipes for the Day"
+        let recipeList: [String] = ["Avocado Tomato Pizza", "Cappuccino", "Cupcakes", "Seafood Paella", "Zucchini Chips"]
+//        let commonItemList: [String, UIElementType] = [["←", button], ["😍", button], ["Ingredients", selected tab], ["Instructions", tab]]
+        let recipeTitle: String = "Avocado Tomato Pizza"
+        let ingredientList: [String] = ["2 green avocados", "a tablespoon of chopped cilantro", "tablespoon of lime juice", "tablespoon of salt", "1 peeled garlic", "8 inch pre-baked pizza crust", "1 tablespoon of organic olive oil", "1 cup of sliced tomatoes", "1 cup of shredded pepper jack cheese", "1 red pepper chopped up"]
+        let instructionsList: [String] = ["Preheat oven 450 degrees.", "Mix the avocados and cilantros together.", "Puree while adding the table spoon of salt and juice, once done cover it and set it aside.", "Next slice the garlic clove and rub it on the pizza crust. This gives the pizza some flavor. Next use a brush to brush the crust with the organic olive oil.", "Now spread the advocado you mixed over the top of the crush, and arrange the cilantro and tomoatos on top. Lastly sprinkle the cheese and season with any kind of pepper you want.", "Place the pizza on a baking sheet.", "Broil for about 5 minutes in the preheated oven, or when you see that the crust loooks toasted. Take it out and EAT!!!"]
         
         
+        //Verify the string in the Page Header matches requirements
+        func verifyPageHeader(requiredTitle: String) {
+            XCTAssert(app.staticTexts["\(requiredTitle)"].exists, "Correct Header")
+        }
         
         
+        //Common method for verifying elements in a given List View match requirements
+        func verifyItemsArePresent(itemList: [String]) {
+            var n = 1
+            for item in itemList {
+                XCTAssert(app.staticTexts["\(item)"].exists, "Item \(n) Exists")
+                n+=1
+            }
+        }
+        
+        //Loop through all of the recipes on the main page
+        for recipe in recipeList {
+            //Tap on the next recipe in the list
+            app.staticTexts[recipe].tap()
+
+            //Tap on the back-arrow to return to the Main View
+            app.buttons["←"].tap()
+        }
         //TO-DO: Page-object Model class that lists out ingredients and instructions
         
         
@@ -69,13 +99,17 @@ class RecipeUITests: XCTestCase {
         
         
         //Main view UI tests
+        //Verify correct Page Title
+        verifyPageHeader(requiredTitle: mainTitle)
+        
         //Verify correct Recipe List
+        verifyItemsArePresent(itemList: recipeList)
         
-        let recipeList = ["Avocado Tomato Pizza", "Cappuccino", "Cupcakes", "Seafood Paella", "Zucchini Chips"]
         
-        for index in recipeList {
-            XCTAssert(app.staticTexts["\(index)"].exists, "Recipe Exists")
-        }
+        
+//        for index in recipeList {
+//            XCTAssert(app.staticTexts["\(index)"].exists, "Recipe Exists")
+//        }
         
         //TEMPORARY: Test the Zucchini Chips ingredients only
         //TO-DO: Move this into a Page-object Model Class later
@@ -84,11 +118,13 @@ class RecipeUITests: XCTestCase {
         
         let compareString = ["Cooking spray so the chips don't get sticky on the tray", "Get 3 zucchini's, green or yellow", "1 tablespoon of organic olive oil", "1/4 Any type of cheese", "1/4 cup of flour", "1 teaspoon of salt", "Garlic powder", "grounded black pepper", "paprika"]
         
-        for index in compareString {
-            print("Test \(index)")
-            XCTAssert(app.staticTexts["\(index)"].exists, "\(index) test passed")
+        verifyItemsArePresent(itemList: compareString)
         
-        }
+//        for index in compareString {
+//            print("Test \(index)")
+//            XCTAssert(app.staticTexts["\(index)"].exists, "\(index) test passed")
+//
+//        }
         
         
         // Use recording to get started writing UI tests.

@@ -19,6 +19,7 @@
 		78AD217D238C364200DCB25B /* RecipeList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78AD2177238C364200DCB25B /* RecipeList.plist */; };
 		78AD2180238C37AD00DCB25B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78AD217F238C37AD00DCB25B /* Main.storyboard */; };
 		78AD2183238C3DC300DCB25B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78AD2181238C3DC200DCB25B /* LaunchScreen.storyboard */; };
+		CF53D56326B4D7FE0057B609 /* ListView Verifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF53D56226B4D7FE0057B609 /* ListView Verifier.swift */; };
 		CFFEEEBA26AF8C110044FFA4 /* RecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFEEEB926AF8C110044FFA4 /* RecipeUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		78AD2177238C364200DCB25B /* RecipeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecipeList.plist; sourceTree = "<group>"; };
 		78AD217F238C37AD00DCB25B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		78AD2182238C3DC200DCB25B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF53D56226B4D7FE0057B609 /* ListView Verifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListView Verifier.swift"; sourceTree = "<group>"; };
 		CFFEEEB726AF8C110044FFA4 /* RecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFEEEB926AF8C110044FFA4 /* RecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeUITests.swift; sourceTree = "<group>"; };
 		CFFEEEBB26AF8C110044FFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		CFFEEEB826AF8C110044FFA4 /* RecipeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CF53D56226B4D7FE0057B609 /* ListView Verifier.swift */,
 				CFFEEEB926AF8C110044FFA4 /* RecipeUITests.swift */,
 				CFFEEEBB26AF8C110044FFA4 /* Info.plist */,
 			);
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFEEEBA26AF8C110044FFA4 /* RecipeUITests.swift in Sources */,
+				CF53D56326B4D7FE0057B609 /* ListView Verifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
